@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mintor - Your Personal Finance Coach</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@400;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="light-mode fade-in">
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <img src="assets/logo.png" alt="Mintor Logo" class="logo" />
+      <span class="logo-text">Mintor</span>
+    </div>
+    <div class="theme-toggle">
+      <span class="theme-toggle-icon" id="theme-toggle-icon" onclick="toggleTheme()">🌓</span>
+      <span>Theme</span>
+    </div>
+  </header>
+
+  <!-- Login Section -->
+  <div class="login-container slide-up" id="login">
+    <h2 class="animated-title">Welcome to Mintor</h2>
+    <input type="text" id="username" placeholder="Enter your name" />
+    <input type="email" id="email" placeholder="Enter your email" />
+    <input type="password" id="password" placeholder="Enter your password" />
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- Chat Section -->
+  <div class="chat-container" id="chat" style="display: none;">
+    <div class="chat-header bounce-in">Mintor : Your Personal Finance Coach</div>
+    <div id="greeting" class="fade-in"></div>
+    
+    <div id="thinking" class="thinking-container" style="display: none;">
+      <div class="thinking-text">Mintor is thinking...</div>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+
+    <div class="chat-box" id="chatBox"></div>
+    <input class="chat-input" type="text" id="userInput" placeholder="Ask Mintor anything..." onkeypress="handleKeyPress(event)" />
+  </div>
+
+  <!-- Suggestion Section -->
+  <div class="suggestions-container" id="suggestions" style="display: none;">
+    <h3>Need help with finances?</h3>
+    <div class="suggestion-buttons">
+      <button class="suggestion-btn" onclick="sendSuggestion('Budgeting Tips')">Budgeting Tips</button>
+      <button class="suggestion-btn" onclick="sendSuggestion('Investment Advice')">Investment Advice</button>
+      <button class="suggestion-btn" onclick="sendSuggestion('Debt Management')">Debt Management</button>
+      <button class="suggestion-btn" onclick="sendSuggestion('Tax Planning')">Tax Planning</button>
+      <button class="suggestion-btn" onclick="sendSuggestion('Savings Goals')">Savings Goals</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
